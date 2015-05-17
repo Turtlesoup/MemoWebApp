@@ -36,4 +36,15 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   config.action_mailer.default_url_options = { :host => "https://afternoon-falls-1285.herokuapp.com" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings =
+  {
+    :address              => "smtp.gmail.com",
+    :port                 => 465,
+    :domain               => "afternoon-falls-1285.herokuapp",
+    :user_name            => "turtlesoupgames@gmail.com",
+    :password             => "turtlesoup",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 end
