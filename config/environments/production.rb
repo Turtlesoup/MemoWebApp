@@ -82,8 +82,7 @@ Rails.application.configure do
   {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => "afternoon-falls-1285.herokuapp",
-    :user_name            => "turtlesoupgames@gmail.com",
+    :user_name            => "lukebrown4290@hotmail.com",
     :password             => "turtlesoup",
     :authentication       => "plain",
     :enable_starttls_auto => true
