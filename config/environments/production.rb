@@ -82,7 +82,7 @@ Rails.application.configure do
   {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :user_name            => "lukebrown4290@hotmail.com",
+    :user_name            => "turtlesoupgames@gmail.com",
     :password             => "turtlesoup",
     :authentication       => "plain",
     :enable_starttls_auto => true
