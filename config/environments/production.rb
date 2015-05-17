@@ -84,7 +84,7 @@ Rails.application.configure do
     :port                 => 587,
     :user_name            => "turtlesoupgames@gmail.com",
     :password             => "turtlesoup",
-    :authentication       => "plain",
+    :authentication       => "login",
     :enable_starttls_auto => true
   }
   
