@@ -8,21 +8,21 @@ default: &default
       adapter: postgresql
       encoding: SQL_ASCII
       pool: 5
-      #username: luke
-      #password: turtlesoup
+      username: luke
+      password: turtlesoup
       host:     <%= ENV['IP'] %>
 
 development:
   <<: *default
-  database: db_development
+  database: db/db_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db_test
+  database: db/db_test
 
 production:
   <<: *default
-  database: db_production
+  database: db/db_production
