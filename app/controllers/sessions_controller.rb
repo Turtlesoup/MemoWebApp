@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
   end
   
   def index
+    if !current_user
+      redirect_to log_in_path
+    end
   end
   
   def create

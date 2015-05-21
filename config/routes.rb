@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
   get "logged_in" => "sessions#index", :as => "logged_in"
-  root :to => "sessions#new"
+  root :to => "sessions#index"
   resources :users
   resources :sessions
   resources :password_resets
