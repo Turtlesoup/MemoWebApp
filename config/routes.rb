@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
-  get 'password_resets/new'
-
+  root "sessions#index"
+  
+  get "password_resets/new"
+  post "users/set_list_item_orderings"
+  
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
   get "logged_in" => "sessions#index", :as => "logged_in"
-  root :to => "sessions#index"
+  
   resources :users
   resources :sessions
   resources :password_resets
+  resources :list_items
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
