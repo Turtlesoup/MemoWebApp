@@ -2,7 +2,7 @@
 <div id="todoList">
 	<h2>To Do</h2>
 	<div id="addItemElement">
-		<img src="add.png" id="addNewItemButton">
+		<img src="<%= image_path('add.png') %>" id="addNewItemButton">
 	</div>
 	<div id="listItemsContainer">
 		<%= render :partial => 'list_items/listContainer', :object => @listitems %>
@@ -12,7 +12,7 @@
 
 <div id="addItemPopup">
 	<div>
-		<img src="delete.png" id="closeButton" class="b-close">
+		<img src="<%= image_path('delete.png') %>" id="closeButton" class="b-close">
 		<p>Name your task</p>
 		<p>
 		<%= form_for ListItem.new do |f| %>

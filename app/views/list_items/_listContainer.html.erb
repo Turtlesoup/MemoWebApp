@@ -2,7 +2,7 @@
 	<% for item in @listitems.each do [item] %>
 	    <li id="todoListElement">
 	    	<div id="handle">
-	    		<img src="assets/handle.png" draggable=false>
+	    		<img src="<%= image_path('handle.png') %>" draggable=false>
 	    	</div>
 	    	<div id="itemText">
 	    		<%= item.label %>
