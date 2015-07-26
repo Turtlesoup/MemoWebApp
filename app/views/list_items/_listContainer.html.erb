@@ -1,15 +1,17 @@
 <ul class="sortable list" id="listContainer">
-	<% for item in @listitems.each do [item] %>
-	    <li id="todoListElement">
-	    	<div id="handle">
-	    		<img src="<%= image_path('handle.png') %>" draggable=false>
-	    	</div>
-	    	<div id="itemText">
-	    		<%= item.label %>
-	    	</div>
-	    	<div id="deleteElement">
-	    		<%= button_to "x", item, :method => :delete %>
-	    	</div>
-	    </li>
+	<% if @listitems %>
+		<% for item in @listitems.each do [item] %>
+		    <li id="todoListElement">
+		    	<div id="handle">
+		    		<img src="<%= image_path('handle.png') %>" draggable=false>
+		    	</div>
+		    	<div id="itemText">
+		    		<%= item.label %>
+		    	</div>
+		    	<div id="deleteElement">
+		    		<%= button_to "x", item, :method => :delete %>
+		    	</div>
+		    </li>
+		<% end %>
 	<% end %>
 </ul>

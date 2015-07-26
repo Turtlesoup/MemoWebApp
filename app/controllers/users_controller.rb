@@ -16,6 +16,15 @@ class UsersController < ApplicationController
   end
   
   def set_list_item_orderings
+    
+    listitems = ListItem.where(user: current_user.id)
+    for listItem in listitems
+      listItem.index = params[listItem.label]
+      listItem.save
+    end
+    
+    @listitems = ListItem.where(user: current_user.id).order(:index)
+    
     redirect_to logged_in_path
   end
   

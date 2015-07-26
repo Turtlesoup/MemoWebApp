@@ -3,10 +3,11 @@ class SessionsController < ApplicationController
   end
   
   def index
-    @listitem = ListItem.new
-    @listitems = ListItem.all
     if !current_user
       redirect_to log_in_path
+    else
+      @listitem = ListItem.new
+      @listitems = ListItem.where(user: current_user.id).order(:index)
     end
   end
   
