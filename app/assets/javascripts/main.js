@@ -20,18 +20,18 @@ $(document).ready(function() {
 		handle: "#handle",
 		placeholder: "sortable-placeholder",
 		update: function() {
-			
-		var data = "";
-	    $("#todoListElement #itemText").each(function(i, el){
-	            var p = $(el).html().trim();
-	            data += "&"+p+"="+i;
-	        });
-	        
-		$.ajax({
-		    type: "POST",
-		    url: "/users/set_list_item_orderings" + "?&authenticity_token=" + auth_token + data,
-		    data: data
-		})
+
+			var data = "&authenticity_token="+auth_token;
+		    $("#todoListElement #itemText").each(function(i, el){
+		            var p = $(el).html().trim();
+		            data += "&"+p+"="+i;
+		        });
+		        
+			$.ajax({
+			    type: "POST",
+			    url: "/users/set_list_item_orderings",
+			    data: data
+			});
 		}
 	});
 });
