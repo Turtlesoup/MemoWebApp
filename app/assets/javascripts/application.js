@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery-bpopup-min
 //= require jquery-ui-touch-punch-min
+//= require_tree .
