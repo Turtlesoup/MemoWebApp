@@ -9,20 +9,17 @@ class ListItemsController < ApplicationController
     itemsWithSameLabel = ListItem.find_by(user: current_user.id, label: @listitem.label)
     if !itemsWithSameLabel
       #create and save a new list item
-      respond_to do |format|
-        @listitem.user = current_user.id
-        @listitem.index = ListItem.where(user: current_user.id).length
-        
-        if @listitem.save
-          @listitems = ListItem.where(user: current_user.id).order(:index)
-          format.html { render "sessions/index" }
-          format.js { render :action => "create", :layout => false}
-          #render :partial => 'list_items/listContainer', :object => @listitems
-        else
-          @listitem = ListItem.new
-          @listitems = ListItem.where(user: current_user.id).order(:index)
-          redirect_to logged_in_path
-        end
+      @listitem.user = current_user.id
+      @listitem.index = ListItem.where(user: current_user.id).length
+      
+      if @listitem.save
+        @listitem = ListItem.new
+        @listitems = ListItem.where(user: current_user.id).order(:index)
+        redirect_to logged_in_path
+      else
+        @listitem = ListItem.new
+        @listitems = ListItem.where(user: current_user.id).order(:index)
+        redirect_to logged_in_path
       end
     else
       #item already exists with same label
