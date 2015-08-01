@@ -2,14 +2,37 @@ header, section {
 	display: block;
 }
 body {
-	font-family: 'Droid Serif';
-}
-h1, h2 {
 	text-align: left;
 	font-weight: normal;
 	font-family: 'Archivo Narrow', sans-serif;
 	color: #FCFCFC;
 	font-size: 22;
+}
+h1, h2, p {
+	text-align: left;
+	font-weight: normal;
+	font-family: 'Archivo Narrow', sans-serif;
+	color: #FCFCFC;
+	font-size: 22;
+}
+.popupText {
+	text-align: left;
+	font-weight: normal;
+	font-family: 'Archivo Narrow', sans-serif;
+	color: #C2C2C2;
+	font-size: 22;
+}
+a:link {
+    color: #FEFEFE;
+}
+a:visited {
+    color: #FEFEFE;
+}
+a:hover {
+    color: #FFFFFF;
+}
+a:active {
+    color: #FEFEFE;
 }
 
 .sortable{
@@ -49,6 +72,12 @@ h1, h2 {
 {
 	float: none;
 }
+.centerPanel
+{
+	position: relative;
+	margin: auto;
+	width: 200px;
+}
 #todoList
 {
 	position: relative;
@@ -59,7 +88,7 @@ h1, h2 {
 {
 	cursor: hand;
 	position: absolute;
-	top: 3px;
+	top: -15px;
 	right: 3px;
 }
 #todoListElement
@@ -114,4 +143,29 @@ li.sortable-placeholder {
 	position: absolute;
 	top: 5px;
 	right: 5px;
+}
+
+.greenButton {
+	-moz-box-shadow: 0px 4px 0px 0px #366e55;
+	-webkit-box-shadow: 0px 4px 0px 0px #366e55;
+	box-shadow: 0px 4px 0px 0px #366e55;
+	background-color:#6bd6a6;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #6bd6a6;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:17px;
+	padding:6px 17px;
+	text-decoration:none;
+}
+.greenButton:hover {
+	background-color:#6bd6a6;
+}
+.greenButton:active {
+	position:relative;
+	top:1px;
 }
